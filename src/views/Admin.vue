@@ -47,7 +47,7 @@
       <main class="mt-16 mx-auto max-w-7xl px-4 sm:mt-24">
         <div class="text-center">
           <h1 class="text-4xl tracking-tight font-bold text-gray-900 sm:text-5xl md:text-6xl">
-            <span class="block xl:inline">회의실 사용예약 SlackApp</span>
+            <span class="block xl:inline">Admin</span>
             {{ ' ' }}
             <span class="block text-indigo-600 xl:inline">공간을 더 풍요롭게</span>
           </h1>
@@ -61,6 +61,7 @@
         </div>
       </main>
     </div>
+    <Hero></Hero>
   </div>
 </template>
 
@@ -68,10 +69,14 @@
 import { Popover, PopoverButton, PopoverPanel } from '@headlessui/vue'
 import { MenuIcon, XIcon } from '@heroicons/vue/outline'
 import routes from '../router.ts'
+import Hero from '../sections/Hero.vue'
 
 </script>
 <script>
 export default {
+  components: {
+    Hero : Hero,
+  },
   methods : {
     handler(msg) {
      console.log(msg)
