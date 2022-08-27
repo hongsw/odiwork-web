@@ -1,6 +1,33 @@
-import { createApp } from 'vue'
+import { createApp, h } from 'vue'
+import routes from './routes'
 import './style.css'
-import App from './App.vue'
 import './index.css'
+import { defineAsyncComponent } from 'vue'
+import Home from './pages/Home.vue'
 
-createApp(App).mount('#app')
+const SimpleRouterApp = {
+    data: () => ({
+      currentRoute: window.location.pathname
+    }),
+  
+    computed: {
+      ViewComponent (): any{
+        const matchingPage = routes[this.currentRoute] || '404'
+        return defineAsyncComponent(() => import(`./pages/${matchingPage}.vue`));
+      }
+    },
+  
+    render () {
+      return h(this.ViewComponent)
+    },
+  
+    created () {
+      window.addEventListener('popstate', () => {
+        this.currentRoute = window.location.pathname
+      })
+    }
+  }
+
+
+const app = createApp(SimpleRouterApp)
+app.mount('#app')
