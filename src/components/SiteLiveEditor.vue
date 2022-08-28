@@ -28,7 +28,7 @@
     <div class="md:pl-64 flex flex-col">
       <main class="flex-1">
             <!-- Replace with your content -->
-            <slot/>
+            <slot></slot>
             <!-- /End replace -->
       </main>
     </div>

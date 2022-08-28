@@ -11,9 +11,6 @@ import IframeWrapper from "@/layouts/IframeWrapper.vue"
 <slot></slot>
  </template>
 <script lang="ts">
-
-import { h } from 'vue'
-import { createSSRApp } from 'vue'
 export default {
     components: {
         IframeWrapper,

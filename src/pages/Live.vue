@@ -10,7 +10,7 @@
           Odi
         </a>
       </div>
-      <div class="space-y-6 sm:px-6 lg:px-0 lg:col-span-9 leading-5">
+      <div class="space-y-6 sm:px-0 lg:px-0 lg:col-span-9 leading-5">
       <form action="#" method="POST">
         <div class="shadow sm:overflow-hidden">
           <div class="bg-brack py-6 px-4 space-y-6 sm:p-6">

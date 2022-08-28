@@ -8,7 +8,7 @@ import TheFooter from '@/components/TheFooter.vue';
         Odi
     </a>
     <the-header />
-    <slot />
+    <slot></slot>
     <the-footer />
 </template>
 <script lang="ts">

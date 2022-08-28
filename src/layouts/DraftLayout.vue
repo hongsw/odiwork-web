@@ -4,12 +4,12 @@ import TheFooter from '@/components/TheFooter.vue';
 </script>
 <template>
     <the-header />
-        <slot />
+        <slot></slot>
         <the-footer />
 </template>
 <script lang="ts">
 export default {
-    name: 'DefaultLayout',
+    name: 'DraftLayout',
     components: {
         TheHeader,
         TheFooter,

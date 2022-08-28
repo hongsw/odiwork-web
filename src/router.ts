@@ -10,6 +10,7 @@ import { defineAsyncComponent } from 'vue'
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from './pages/Home.vue'
 import Home2 from './pages/Home2.vue'
+import SubHome from './pages/SubHome.vue'
 import Live from './pages/Live.vue'
 
 export default createRouter({
@@ -19,6 +20,11 @@ export default createRouter({
       path: '/',
       component: Home,
       meta: { layout: 'DefaultLayout' }
+    },
+    {
+      path: '/sub/home',
+      component: SubHome,
+      meta: { layout: 'DraftLayout' }
     },
     {
       path: '/draft/home',
