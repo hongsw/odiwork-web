@@ -67,7 +67,7 @@
 <script setup>
 import { Popover, PopoverButton, PopoverPanel } from '@headlessui/vue'
 import { MenuIcon, XIcon } from '@heroicons/vue/outline'
-import routes from '../router.ts'
+import routes from '@/router.ts'
 
 </script>
 <script>

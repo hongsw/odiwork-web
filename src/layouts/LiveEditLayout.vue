@@ -1,27 +1,26 @@
-<script setup>
-import SiteLiveEditor from '@/components/SiteLiveEditor.vue';
+<script setup  lang="ts">
 import TheHeader from '@/components/TheHeader.vue';
 import TheFooter from '@/components/TheFooter.vue';
+import SiteLiveEditor from '@/components/SiteLiveEditor.vue';
+import TopNav from '@/components/TopNav.vue';
+import IframeWrapper from "@/layouts/IframeWrapper.vue"
 
 </script>
-
 <template>
-    <fregment>
-        <site-live-editor></site-live-editor>
-        <the-header />
-        <slot />
-        <the-footer />
-    </fregment>
-</template>
-<script>
+    <top-nav/>
+<slot></slot>
+ </template>
+<script lang="ts">
 
+import { h } from 'vue'
+import { createSSRApp } from 'vue'
 export default {
-    name: 'LiveEditLayout',
     components: {
+        IframeWrapper,
         SiteLiveEditor,
-        TheHeader,
         TheFooter,
-    },
+        TopNav,
+    }
 }
 </script>
 

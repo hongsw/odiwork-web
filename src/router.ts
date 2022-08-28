@@ -9,6 +9,8 @@ import { defineAsyncComponent } from 'vue'
 
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from './pages/Home.vue'
+import Home2 from './pages/Home2.vue'
+import Live from './pages/Live.vue'
 
 export default createRouter({
   history: createWebHistory(),
@@ -19,8 +21,23 @@ export default createRouter({
       meta: { layout: 'DefaultLayout' }
     },
     {
-      path: '/live/home',
+      path: '/draft/home',
       component: Home,
+      meta: { layout: 'DraftLayout' }
+    },
+    {
+      path: '/preview/home',
+      component: Home,
+      meta: { layout: 'PreviewLayout' }
+    },
+    {
+      path: '/live',
+      component: Live,
+      meta: { layout: 'LiveEditLayout' }
+    },
+    {
+      path: '/live/home',
+      component: Live,
       meta: { layout: 'LiveEditLayout' }
     },
     {

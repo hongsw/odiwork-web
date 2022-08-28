@@ -13,7 +13,7 @@
 import {
   defineComponent
 } from "vue";
-import TheLayout from "@/layouts/TheLayout.vue";
+import TheLayout from "./layouts/TheLayout.vue";
 export default defineComponent({
   name: "App",
   components: {

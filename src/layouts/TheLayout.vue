@@ -20,6 +20,7 @@ import MobileLayout from '@/layouts/MobileLayout.vue';
     () => route.meta?.layout as string | undefined,
     async (metaLayout) => {
       try {
+        console.log(metaLayout)
         const component = metaLayout && await import(/* @vite-ignore */ `./${metaLayout}.vue`)
         layout.value = markRaw(component?.default || DefaultLayout)
       } catch (e) {
