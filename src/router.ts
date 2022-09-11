@@ -6,13 +6,17 @@
 //     '/nocode': 'NoCode'
 //   }
 import { defineAsyncComponent } from 'vue'
+import Vue from 'vue';
 
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from './pages/Home.vue'
 import Home2 from './pages/Home2.vue'
 import Live from './pages/Live.vue'
 
-export default createRouter({
+const host = window.location.host;
+const parts = host.split('.');
+const domainLength = 3; // route1.example.com => domain length = 3
+const router = createRouter({
   history: createWebHistory(),
   routes: [
     {

@@ -12,7 +12,10 @@
           <p class="mt-3 max-w-md mx-auto text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
             공유오피스에서 회의실은 매력적입니다. 다양한 고객의 회의실예약 요청을 간편하게 기록하고 공유하여 중복이 없도록하세요. 1월간 사용량을 측정하여 VIP고객을 확인하세요.</p>
           <div class="mt-5 max-w-md mx-auto sm:flex sm:justify-center md:mt-8">
-           
+            route.params
+            {{
+            $route.params
+           }}
           </div>
         </div>
       </main>
