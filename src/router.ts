@@ -71,3 +71,16 @@ const router = createRouter({
     }
   ]
 })
+
+
+router.beforeEach((to, from, next) => {
+  let subdomain = window.location.host.split('.')[0]
+  let domain = window.location.host.split(':')[0]
+  console.log(subdomain)
+  if (subdomain != 'www' && domain != '127.0.0.1') {
+    to.params['subdomain'] = subdomain
+  }
+  next()
+})
+
+export default router;

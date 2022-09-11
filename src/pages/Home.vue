@@ -19,8 +19,10 @@
           </div>
         </div>
       </main>
+      <div v-for="block in content.body" v-bind:key="block._uid">
+        <component :is="block.component" :block="block" :key="block._uid"></component>
+      </div>
     </div>
-    <Hero></Hero>
   </div>
 </template>
 
@@ -30,11 +32,46 @@ import { MenuIcon, XIcon } from '@heroicons/vue/outline'
 import routes from '@/router.ts'
 import Hero from '@/sections/Hero.vue'
 
+import Bar from "@/components/Bar.vue";
+import Foo from "@/components/Foo.vue";
+
 </script>
 <script>
 export default {
   components: {
-    Hero : Hero,
+    Hero,
+    Bar,
+    Foo
+  },
+  data() {
+    return {
+      content: {
+        body: [
+          {
+            _uid: "BUY6Drn9e1",
+            component: "foo",
+            headline: "Foo"
+          },
+          {
+            _uid: "gJZoSLkfZV",
+            component: "bar",
+            title: "Bar"
+          },
+          {
+            _uid: "X1JAfdsZxy",
+            component: "foo",
+            headline: "Another headline"
+          },
+          {
+            _uid: "123123asa",
+            component: "hero",
+            headline: "Another headline",
+            text: "Another headlineAnother headlineAnother headlineAnother headline",
+            src: "https://images.unsplash.com/photo-1525130413817-d45c1d127c42?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1920&q=60&&sat=-100"
+          }
+        ]
+      }
+    };
   },
   methods : {
     handler(msg) {
