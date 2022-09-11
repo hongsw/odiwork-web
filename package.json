@@ -6,6 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
+    "deploy": "yarn build && flyctl deploy",
+    "open": "flyctl open",
     "preview": "vite preview"
   },
   "dependencies": {
