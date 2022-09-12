@@ -1,5 +1,10 @@
 <!-- This example requires Tailwind CSS v2.0+ -->
 <template>
+  <div class="container" style="padding: 50px 0 100px 0">
+    supabaseStore.user :  <Profile v-if="supabaseStore.user" />
+    <Auth v-else />
+  </div>
+
   <div class="relative bg-gray-50 overflow-hidden">
     <div class="relative pt-6 pb-16 sm:pb-24">
       <main class="mt-16 mx-auto max-w-7xl px-4 sm:mt-24">
@@ -35,14 +40,29 @@ import Hero from '@/sections/Hero.vue'
 import Bar from "@/components/Bar.vue";
 import Foo from "@/components/Foo.vue";
 
+  import { supabaseStore } from '@/supabaseStore.js'
+  import { supabase } from '@/supabase.js'
+  import Auth from '@/components/Auth.vue'
+  import Profile from '@/components/Profile.vue'
 </script>
 <script>
 export default {
   components: {
     Hero,
     Bar,
-    Foo
+    Foo,
+    Auth,
+      Profile,
   },
+  setup() {
+    supabaseStore.user = supabase.auth.user()
+      supabase.auth.onAuthStateChange((_, session) => {
+        supabaseStore.user = session.user
+      })
+      return {
+        supabaseStore,
+      }
+    },
   data() {
     return {
       content: {

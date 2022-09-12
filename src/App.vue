@@ -5,11 +5,10 @@
     </the-layout>
   </main>
 </template>
-
-<script setup>
-</script>
+s
 
 <script>
+
 import {
   defineComponent
 } from "vue";
