@@ -38,8 +38,8 @@
 
     type Profiles = {
       id : string | number,
-      username :  string | number,
-      website :  string | number,
+      username :  string,
+      website :  string,
     }
 
     export default {
