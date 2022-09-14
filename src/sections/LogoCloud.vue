@@ -3,7 +3,7 @@
     <div :class="block.bg_color">
       <div class="mx-auto max-w-7xl py-16 px-4 sm:py-20 sm:px-6 lg:px-8">
         <h2 class=""
-        :class="block.text_color">
+        :class="block.text_style">
             {{block.headline}}
         </h2>
         <div class="mt-8 flow-root lg:mt-10">

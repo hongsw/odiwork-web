@@ -19,6 +19,8 @@ import Hero from '@/sections/Hero.vue'
 import LogoCloud from '@/sections/LogoCloud.vue'
 import Newsletter from '@/sections/Newsletter.vue'
 
+import TheHeader from '@/sections/TheHeader.vue';
+import TheFooter from '@/sections/TheFooter.vue';
 import { supabaseStore } from '@/supabaseStore.js'
 import { supabase } from '@/supabase.js'
 import Auth from '@/components/Auth.vue'
@@ -30,6 +32,8 @@ export default {
     Cta,
     Hero,
     LogoCloud: LogoCloud,
+    TheHeader: TheHeader,
+    TheFooter: TheFooter,
     Newsletter,
     Auth,
     Profile,
@@ -45,8 +49,26 @@ export default {
     return {
       content: {
         body: [
-
-        {
+          {
+            _uid: "21312123",
+            component: "TheHeader",
+            menu1_text : "",
+            menu1_link : "",
+            menu2_text : "",
+            menu2_link : "",
+            menu3_text : "",
+            menu3_link : "",
+            navigation : [
+              { name: 'Solutions', href: '#' },
+              { name: 'Pricing', href: '#' },
+              { name: 'Docs', href: '#' },
+              { name: 'Company', href: '#' },
+            ],
+            login_button: true,
+            demo_button: true,
+            signup_button: false,
+          },
+          {
             _uid: "213123",
             component: "cta",
             headline: "아이디어가 있으신가요?",
@@ -60,17 +82,29 @@ export default {
             _uid: "1",
             component: "hero",
             headline: "쉬운 편집 방식",
+            is_center: true,
             text: "웹사이트를 빠르게 만드세요. 만들어지는 과정을 바로 보면서 글과 이미지만 넣으면 됩니다.",
             src: "https://images.unsplash.com/photo-1525130413817-d45c1d127c42?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1920&q=60&&sat=-100",
             button_text: "시작하기",
             button_url: "/start",
           },
+          {
+            _uid: "123213",
+            component: "Newsletter",
+            bg_color: "bg-indigo-700",
+            text_style: "text-3xl font-normal tracking-tight text-white",
+            headline: "제품 뉴스 및 업데이트를 원하십니까?",
+            headline2: "뉴스레터를 구독하세요.",
+            label_text: "이메일을 입력하세요",
+            button_text: "구독",
+          },
         {
             _uid: "2",
             component: "LogoCloud",
             bg_color: "bg-indigo-700",
-            text_color: "text-3xl font-normal tracking-tight text-white",
+            text_style: "text-3xl font-normal tracking-tight text-white text-center",
             headline: "혁신적인 우리의 고객사들",
+            is_center: true,
             logo_src1: "https://tailwindui.com/img/logos/workflow-mark.svg?color=white",
             logo_src2: "https://tailwindui.com/img/logos/workflow-mark.svg?color=white",
             logo_src3: "https://tailwindui.com/img/logos/workflow-mark.svg?color=white",
@@ -79,14 +113,19 @@ export default {
             logo_src6: "https://tailwindui.com/img/logos/workflow-mark.svg?color=white",
           },
           {
-            _uid: "123213",
-            component: "Newsletter",
-            bg_color: "bg-indigo-700",
-            text_color: "text-3xl font-normal tracking-tight text-white",
-            headline: "제품 뉴스 및 업데이트를 원하십니까?",
-            headline2: "뉴스레터를 구독하세요.",
-            label_text: "이메일을 입력하세요",
-            button_text: "구독",
+            _uid: "132123",
+            component: "TheFooter",
+            copyright: "© 2022 Odiwork, Inc. All rights reserved.",
+            icons: [
+              { name: 'Facebook', icon: 'Facebook',href: '#'},
+              {  name: 'Instagram',icon: 'Instagram',href: '#'},
+              {  name: 'Twitter',icon: 'Twitter',href: '#'},
+              {  name: 'GitHub',icon: 'GitHub',href: '#'},
+            ],
+            fb_link: "",
+            insta_link: "",
+            tw_link: "https://twitter.com/odiwork",
+            github_link: "https://github.com/odiwork",
           }
         ]
       }
